@@ -1,38 +1,109 @@
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin: 20px;
+}
+.chiefMinister {
+  background: linear-gradient(0deg, green 0%, white 50%, orange 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  background: #ad5389;
+  background: linear-gradient(0deg, orange 0%, white 50%, green 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em white;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .button {
+    animation: example infinite 2s linear;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes example {
+  0%{
+    background: linear-gradient(0deg, orange 0%, white 50%, green 100%);
   }
-  to {
-    transform: rotate(360deg);
+  15%{
+    background: linear-gradient(45deg, orange 0%, white 50%, green 100%);
   }
+  25%{
+    background: linear-gradient(90deg, orange 0%, white 50%, green 100%);
+  }
+  40%{
+    background: linear-gradient(135deg, orange 0%, white 50%, green 100%);
+  }
+  50%{
+    background: linear-gradient(180deg, orange 0%, white 50%, green 100%);
+  }
+  60%{
+    background: linear-gradient(235deg, orange 0%, white 50%, green 100%);
+  }
+  75%{
+    background: linear-gradient(270deg, orange 0%, white 50%, green 100%);
+  }
+  90%{
+    background: linear-gradient(315deg, orange 0%, white 50%, green 100%);
+  }
+  100%{
+    background: linear-gradient(0deg, orange 0%, white 50%, green 100%);
+  }
+}
+
+.button:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em royalblue;
+}
+
+.button:active {
+  box-shadow: 0 0.3em 1em -0.5em royalblue;
 }
